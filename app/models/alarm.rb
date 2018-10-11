@@ -1,4 +1,6 @@
 class Alarm < ApplicationRecord
+  has_many :upvotes
+
   validates :text, presence: true
   validate :all_caps
 
