@@ -5,7 +5,7 @@ class Alarm < ApplicationRecord
   validate :all_caps
 
   def all_caps
-    unless text.upcase == text
+    unless text && text.upcase == text
       errors.add(:text, "must be upper case")
     end
   end
