@@ -1,0 +1,11 @@
+<div id="new_alarm">
+
+  <%= link_to 'New alarm', new_alarm_path %>
+</div>
+  <% @alarms.each do |alarm| %>
+    <div id="alarm_<%= alarm.id %>">
+      <%= alarm.text %><br />
+      <%=l(alarm.created_at, :format => '%m/%d/%Y %l:%M %P') %>
+      <hr />
+    </div>
+ <% end %>
