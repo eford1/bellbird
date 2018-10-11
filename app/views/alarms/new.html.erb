@@ -1,0 +1,11 @@
+<h1>New alarm</h1>
+
+<%= form_for :alarm, url:alarms_path do |f| %>
+  <% if @alarm.errors.any? %>
+    <div id="error">Invalid alarm. Must be all caps.</div>
+  <% end %>
+  <%= f.label :text %><br />
+  <%= f.text_area :text %><br />
+
+  <%= f.submit %>
+<% end %>
