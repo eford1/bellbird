@@ -15,6 +15,7 @@ class AlarmsController < ApplicationController
   def create
     @alarm = Alarm.new(alarm_params)
     if @alarm.save
+      PushWorker.perform_async(@alarm.id)
       redirect_to alarms_path
     else
       render 'new'
